@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="515.0" prefWidth="575.0" style="-fx-background-color: #283593; -fx-border-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medics.medrovarsarm.MainView">
+   <children>
+      <AnchorPane prefHeight="515.0" prefWidth="270.0" style="-fx-background-color: #003366; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="38.0" layoutY="27.0" text="Головне меню" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="ProductsBtn" alignment="TOP_LEFT" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #003366;" text="Товари" textFill="WHITE" underline="true" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="75.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="OrdersBtn" alignment="TOP_LEFT" layoutX="21.0" layoutY="168.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="245.0" style="-fx-background-color: #003366;" text="Замовлення" textAlignment="JUSTIFY" textFill="WHITE" underline="true" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="75.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="adminPanel" alignment="TOP_LEFT" layoutX="28.0" layoutY="223.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #003366;" text="Адмін панель" textAlignment="JUSTIFY" textFill="WHITE" underline="true" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="75.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="324.0" layoutY="123.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="207.0" prefWidth="473.0" style="-fx-background-color: #328E6E;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioty.armbiblioty.AddAuthorAndGanre">
+    <children>
+        <Button fx:id="btnRequest" layoutX="132.0" layoutY="154.0" prefHeight="37.0" prefWidth="142.0" style="-fx-background-color: #90C67C; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 3; -fx-border-color: white;" text="Видати книгу" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <TextField fx:id="NameField" alignment="CENTER" layoutX="91.0" layoutY="70.0" prefHeight="31.0" prefWidth="252.0" promptText="Введіть ПІБ отримувача" style="-fx-background-radius: 10; -fx-border-color: #ffffff; -fx-border-style: 1; -fx-border-radius: 10; -fx-border-width: 3;" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="91.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextField>
+    </children>
+</AnchorPane>

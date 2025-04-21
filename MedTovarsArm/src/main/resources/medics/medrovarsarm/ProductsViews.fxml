@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="617.0" prefWidth="1181.0" style="-fx-background-color: #003366;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medics.medrovarsarm.ProductsViews">
+   <children>
+      <TableView fx:id="productsTable" layoutX="42.0" layoutY="61.0" prefHeight="522.0" prefWidth="1120.0" style="-fx-background-color: #9bd0c6;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+        <columns>
+          <TableColumn fx:id="NameProducts" prefWidth="217.0" text="Назва товару" />
+          <TableColumn fx:id="CountryCrated" minWidth="0.0" prefWidth="129.0" text="Країна виробник" />
+            <TableColumn fx:id="PriceProducts" prefWidth="95.0" text="Ціна" />
+            <TableColumn fx:id="CategoryProducts" prefWidth="173.0" text="Категорія" />
+            <TableColumn fx:id="QuantityColumn" prefWidth="77.0" text="Кількість" />
+            <TableColumn fx:id="StatusColumn" prefWidth="138.0" text="Статус" />
+            <TableColumn fx:id="actionColumns" prefWidth="311.0" text="Дії" />
+        </columns>
+      </TableView>
+      <HBox layoutX="267.0" layoutY="14.0" prefHeight="32.0" prefWidth="743.0" style="-fx-spacing: 10;" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="171.0">
+         <children>
+            <Button fx:id="AddProducts" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #283593; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати товар" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="SearchField" prefHeight="35.0" prefWidth="260.0" promptText="Пошук" />
+            <Button fx:id="AddCategory" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #283593; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати категорію" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="AddClient" mnemonicParsing="false" prefHeight="32.0" prefWidth="146.0" style="-fx-background-color: #283593; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати клієнта" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="BackBtn" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="61.0" style="-fx-background-color: #283593; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Назад" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

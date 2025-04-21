@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #328E6E;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioty.armbiblioty.EditAdminRecordViews">
+     <Button fx:id="saveBtn" layoutX="129.0" layoutY="128.0" prefHeight="37.0" prefWidth="142.0" style="-fx-background-color: #90C67C; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-width: 3; -fx-border-color: white;" text="Зберегти">
+      <font>
+         <Font size="16.0" />
+      </font></Button>
+     <TextField fx:id="nameField" alignment="CENTER" layoutX="56.0" layoutY="70.0" prefHeight="45.0" prefWidth="297.0" promptText="Назва" style="-fx-background-radius: 10; -fx-border-color: #ffffff; -fx-border-radius: 10; -fx-border-width: 3;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+      <font>
+         <Font size="18.0" />
+      </font></TextField>
+</AnchorPane>

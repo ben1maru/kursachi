@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="617.0" prefWidth="1181.0" style="-fx-background-color: #328E6E;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioty.armbiblioty.LibrariesViews">
+   <children>
+      <TableView fx:id="booksTable" layoutX="28.0" layoutY="61.0" prefHeight="522.0" prefWidth="1120.0" style="-fx-background-color: #90C67C;" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0">
+        <columns>
+          <TableColumn fx:id="NameBook" prefWidth="198.0" text="Назва книги" />
+          <TableColumn fx:id="AutorBook" minWidth="0.0" prefWidth="127.0" text="Автор" />
+            <TableColumn fx:id="GanreColumn" prefWidth="109.0" text="Жанр" />
+            <TableColumn fx:id="yearWrite" prefWidth="125.0" text="Рік написання" />
+            <TableColumn fx:id="ISBNColumn" prefWidth="118.0" text="ISBN" />
+            <TableColumn fx:id="QuantityColumn" prefWidth="87.0" text="Кількість" />
+            <TableColumn fx:id="StatusColumn" prefWidth="108.0" text="Статус" />
+            <TableColumn fx:id="ActionColumns" prefWidth="241.0" text="Дії" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox layoutX="267.0" layoutY="14.0" prefHeight="32.0" prefWidth="648.0" style="-fx-spacing: 10;" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="266.0">
+         <children>
+            <Button fx:id="AddBooks" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #90C67C; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати книгу">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="SearchField" prefHeight="35.0" prefWidth="260.0" promptText="Пошук" />
+            <Button fx:id="AddAuthor" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #90C67C; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати автора">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="AddGanre" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #90C67C; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Додати жанр">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="BackBtn" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="61.0" style="-fx-background-color: #90C67C; -fx-border-color: white; -fx-border-radius: 5; -fx-background-radius: 5;" text="Назад">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="370.0" prefWidth="436.0" style="-fx-background-color: #283593;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medics.medrovarsarm.Autentification">
+
+    <!-- Заголовок -->
+    <Label layoutX="149.0" layoutY="67.0" prefHeight="35.0" prefWidth="139.0" text="Авторизація" textFill="WHITE" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="148.0" AnchorPane.topAnchor="67.0">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <TextField fx:id="txtEmail" layoutX="136.0" layoutY="142.0" prefHeight="35.0" prefWidth="252.0" promptText="Введіть адрес електронної пошти" style="-fx-background-radius: 10; -fx-border-color: yellow; -fx-border-radius: 10; -fx-border-width: 3;" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="92.0">
+      <font>
+         <Font size="13.0" />
+      </font></TextField>
+    <PasswordField fx:id="txtPassword" layoutX="136.0" layoutY="216.0" prefHeight="31.0" prefWidth="252.0" promptText="Введіть пароль" style="-fx-background-radius: 10; -fx-border-color: yellow; -fx-border-style: 1; -fx-border-radius: 10; -fx-border-width: 3;" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="92.0">
+      <font>
+         <Font size="13.0" />
+      </font></PasswordField>
+
+    <!-- Кнопка для входу -->
+    <Button fx:id="btnLogIn" layoutX="170.0" layoutY="286.0" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: #FFEB3B; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: white; -fx-border-width: 3;" text="Увійти" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="170.0">
+      <font>
+         <Font size="15.0" />
+      </font></Button>
+   <Label layoutX="92.0" layoutY="332.0" text="У вас не має аккаунту?" textFill="#f5f5f5" />
+   <Button fx:id="btnSgnIn" layoutX="226.0" layoutY="327.0" mnemonicParsing="false" style="-fx-background-color: #283593;" text="Зареєструватися" textFill="#00ff66">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Button>
+
+</AnchorPane>

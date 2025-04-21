@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="464.0" prefWidth="400.0" style="-fx-background-color: #283593;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medics.medrovarsarm.AddProductViews">
+    <children>
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-font-family: 'Roboto';" text="Додати новий продукт" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+        <Label style="-fx-text-fill: #e0e0e0; -fx-font-family: 'Roboto';" text="Назва продукту:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0" />
+        <TextField fx:id="nameField" promptText="Введіть назву продукту" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8; -fx-font-family: 'Roboto';" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="90.0">
+
+        </TextField>
+        <Label style="-fx-text-fill: #e0e0e0; -fx-font-family: 'Roboto';" text="Країна:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="130.0" />
+        <TextField fx:id="countryField" promptText="Введіть країну" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8; -fx-font-family: 'Roboto';" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="160.0">
+
+        </TextField>
+        <Label style="-fx-text-fill: #e0e0e0; -fx-font-family: 'Roboto';" text="Ціна:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="200.0" />
+        <TextField fx:id="priceField" promptText="Введіть ціну" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8; -fx-font-family: 'Roboto';" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0">
+
+        </TextField>
+        <Label style="-fx-text-fill: #e0e0e0; -fx-font-family: 'Roboto';" text="Кількість:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="270.0" />
+        <TextField fx:id="quantityField" promptText="Введіть кількість" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8; -fx-font-family: 'Roboto';" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="300.0">
+
+        </TextField>
+        <Label style="-fx-text-fill: #e0e0e0; -fx-font-family: 'Roboto';" text="Категорія:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="340.0" />
+        <ChoiceBox fx:id="categoryChoiceBox" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 5; -fx-font-family: 'Roboto';" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="370.0">
+
+        </ChoiceBox>
+        <Button fx:id="saveButton" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 8 16; -fx-font-family: 'Roboto';" text="Зберегти" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="420.0">
+
+        </Button>
+        <Button fx:id="cancelButton" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 8 16; -fx-font-family: 'Roboto';" text="Скасувати" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="420.0">
+
+        </Button>
+    </children>
+
+</AnchorPane>
