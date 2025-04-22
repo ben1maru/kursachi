@@ -26,7 +26,7 @@ public class LibrariesViews {
 
     @FXML private ResourceBundle resources;
     @FXML private URL location;
-    @FXML private TableColumn<Book, Integer> ISBNColumn;
+    @FXML private TableColumn<Book, String> ISBNColumn;
     @FXML private TableView<Book> booksTable;
     @FXML private TableColumn<Book, String> AutorBook;
     @FXML private TableColumn<Book, String> GanreColumn;
@@ -51,18 +51,10 @@ public class LibrariesViews {
         AddGanre.setOnAction(event -> handleAddGanre());
 
         try {
-            // Налаштування колонок
             configureTableColumns();
-
-            // Завантаження даних
             loadBooksData();
-
-            // Налаштування пошуку
             setupSearch();
-
-            // Підсвічування рядків
             setupRowHighlighting();
-
         } catch (Exception e) {
             showErrorAlert("Помилка ініціалізації", e.getMessage());
             e.printStackTrace();
@@ -106,7 +98,7 @@ public class LibrariesViews {
                         book.getAuthor().toLowerCase().contains(lowerCaseFilter) ||
                         book.getGenre().toLowerCase().contains(lowerCaseFilter) ||
                         String.valueOf(book.getYear()).contains(lowerCaseFilter) ||
-                        String.valueOf(book.getIsbn()).contains(lowerCaseFilter);
+                        book.getIsbn().toLowerCase().contains(lowerCaseFilter);
             });
         });
 
@@ -151,7 +143,7 @@ public class LibrariesViews {
                         totalQuantity,
                         availableQuantity,
                         rs.getString("status"),
-                        rs.getInt("isbn")
+                        rs.getString("isbn")
                 ));
             }
         } catch (SQLException e) {
@@ -161,7 +153,6 @@ public class LibrariesViews {
             try {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
-                // З'єднання не закриваємо, оскільки воно завжди відкрите
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -172,8 +163,8 @@ public class LibrariesViews {
         return param -> new TableCell<>() {
             private final Button editBtn = new Button("Редагувати");
             private final Button deleteBtn = new Button("Видалити");
-            private final Button issueBtn = new Button("Видати");
-            private final HBox buttons = new HBox(5, editBtn, deleteBtn, issueBtn);
+            private final Button issueBtn = new Button("Видати книгу");
+            private final HBox buttons = new HBox(2, editBtn, deleteBtn, issueBtn);
 
             {
                 editBtn.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;");
@@ -322,7 +313,6 @@ public class LibrariesViews {
             try {
                 if (conn != null) {
                     conn.setAutoCommit(true);
-                    // З'єднання не закриваємо
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -350,7 +340,6 @@ public class LibrariesViews {
     @FXML
     private void handleBack() {
         try {
-            // Завантажуємо головне вікно (MainViews)
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainViews.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
@@ -358,7 +347,6 @@ public class LibrariesViews {
             stage.setScene(new Scene(root));
             stage.show();
 
-            // Закриваємо поточне вікно
             Stage currentStage = (Stage) BackBtn.getScene().getWindow();
             currentStage.close();
         } catch (Exception e) {
@@ -372,13 +360,13 @@ public class LibrariesViews {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AddAuthorAndGanre.fxml"));
             Parent root = loader.load();
             AddAuthorAndGanre controller = loader.getController();
-            controller.setMode("author"); // Встановлюємо режим для автора
+            controller.setMode("author");
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
-            loadBooksData(); // Оновлюємо дані після додавання
+            loadBooksData();
         } catch (Exception e) {
             showErrorAlert("Помилка додавання автора", e.getMessage());
         }
@@ -390,13 +378,13 @@ public class LibrariesViews {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AddAuthorAndGanre.fxml"));
             Parent root = loader.load();
             AddAuthorAndGanre controller = loader.getController();
-            controller.setMode("ganre"); // Встановлюємо режим для жанру
+            controller.setMode("ganre");
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
-            loadBooksData(); // Оновлюємо дані після додавання
+            loadBooksData();
         } catch (Exception e) {
             showErrorAlert("Помилка додавання жанру", e.getMessage());
         }
@@ -435,10 +423,10 @@ public class LibrariesViews {
         private final int totalQuantity;
         private final int availableQuantity;
         private final String status;
-        private final int isbn;
+        private final String isbn;
 
         public Book(int id, String name, String author, String genre, int year,
-                    int totalQuantity, int availableQuantity, String status, int isbn) {
+                    int totalQuantity, int availableQuantity, String status, String isbn) {
             this.id = id;
             this.name = name;
             this.author = author;
@@ -450,7 +438,6 @@ public class LibrariesViews {
             this.isbn = isbn;
         }
 
-        // Гетери
         public int getId() { return id; }
         public String getName() { return name; }
         public String getAuthor() { return author; }
@@ -459,6 +446,6 @@ public class LibrariesViews {
         public int getTotalQuantity() { return totalQuantity; }
         public int getAvailableQuantity() { return availableQuantity; }
         public String getStatus() { return status; }
-        public int getIsbn() { return isbn; }
+        public String getIsbn() { return isbn; }
     }
 }

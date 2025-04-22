@@ -120,10 +120,10 @@ public class AddBooksViews {
             return;
         }
 
-        // Перевірка формату ISBN (містить цифри, дефіси, принаймні 3 дефіси)
+        // Перевірка формату ISBN (містить цифри, дефіси, щонайменше один дефіс)
         String isbn = ISBNField.getText().trim();
-        if (!isbn.matches("[0-9-]+") || isbn.chars().filter(ch -> ch == '-').count() < 3) {
-            showAlert("Помилка", "ISBN має містити цифри, дефіси та принаймні три дефіси (наприклад, 1234-5678-9-012)", Alert.AlertType.ERROR);
+        if (!isbn.matches("[0-9-]+") || isbn.chars().filter(ch -> ch == '-').count() < 1) {
+            showAlert("Помилка", "ISBN має містити лише цифри та хоча б один дефіс (наприклад, 1234-5678)", Alert.AlertType.ERROR);
             return;
         }
 

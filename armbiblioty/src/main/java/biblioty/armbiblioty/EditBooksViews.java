@@ -153,12 +153,22 @@ public class EditBooksViews {
             return;
         }
 
+        // Перевірка формату ISBN (має містити лише цифри і хоча б один дефіс)
+        String isbn = ISBNField.getText().trim();
+        if (!isbn.matches("[0-9-]+") || isbn.chars().filter(ch -> ch == '-').count() < 1) {
+            showAlert("Помилка", "ISBN має містити лише цифри та хоча б один дефіс (наприклад, 1234-5678)", Alert.AlertType.ERROR);
+            return;
+        }
+
         // Перевірка числових полів
         try {
-            Integer.parseInt(writeYearField.getText());
-            Integer.parseInt(ISBNField.getText());
-            int quantity = Integer.parseInt(QuantityField.getText());
+            int year = Integer.parseInt(writeYearField.getText());
+            if (year < 0 || year > java.time.Year.now().getValue()) {
+                showAlert("Помилка", "Рік видання має бути коректним", Alert.AlertType.ERROR);
+                return;
+            }
 
+            int quantity = Integer.parseInt(QuantityField.getText());
             if (quantity < 0) {
                 showAlert("Попередження", "Кількість не може бути від'ємною", Alert.AlertType.WARNING);
                 return;
@@ -188,7 +198,7 @@ public class EditBooksViews {
                 stmt.setInt(2, authorId);
                 stmt.setInt(3, ganreId);
                 stmt.setInt(4, Integer.parseInt(writeYearField.getText()));
-                stmt.setInt(5, Integer.parseInt(ISBNField.getText()));
+                stmt.setString(5, isbn); // Зберігаємо ISBN як текст
                 stmt.setInt(6, Integer.parseInt(QuantityField.getText()));
                 stmt.setInt(7, bookId);
 
@@ -203,6 +213,7 @@ public class EditBooksViews {
             }
         }
     }
+
 
     private void closeWindow() {
         Stage stage = (Stage) AddBooks.getScene().getWindow();
