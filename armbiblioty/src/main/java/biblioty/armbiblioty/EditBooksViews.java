@@ -26,7 +26,7 @@ public class EditBooksViews {
     private URL location;
 
     @FXML
-    private Button saveButton;
+    private Button AddBooks;
 
     @FXML
     private ChoiceBox<String> GanreChoicBox;
@@ -60,7 +60,7 @@ public class EditBooksViews {
         loadAuthors();
         loadGenres();
 
-        saveButton.setOnAction(event -> {
+        AddBooks.setOnAction(event -> {
             try {
                 updateBook();
             } catch (SQLException e) {
@@ -110,7 +110,7 @@ public class EditBooksViews {
                     int id = rs.getInt("id");
                     String name = rs.getString("name_author");
                     authors.add(name);
-                    authorMap.put(name, id);
+                    authorMap.put(name, Integer.valueOf(id));
                 }
                 authorChoicBox.setItems(authors);
             }
@@ -131,7 +131,7 @@ public class EditBooksViews {
                     int id = rs.getInt("id");
                     String name = rs.getString("name_ganre");
                     genres.add(name);
-                    ganreMap.put(name, id);
+                    ganreMap.put(name, Integer.valueOf(id));
                 }
                 GanreChoicBox.setItems(genres);
             }
@@ -205,7 +205,7 @@ public class EditBooksViews {
     }
 
     private void closeWindow() {
-        Stage stage = (Stage) saveButton.getScene().getWindow();
+        Stage stage = (Stage) AddBooks.getScene().getWindow();
         stage.close();
     }
 

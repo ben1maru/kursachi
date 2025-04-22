@@ -120,18 +120,27 @@ public class AddBooksViews {
             return;
         }
 
+        // Перевірка формату ISBN (містить цифри, дефіси, принаймні 3 дефіси)
+        String isbn = ISBNField.getText().trim();
+        if (!isbn.matches("[0-9-]+") || isbn.chars().filter(ch -> ch == '-').count() < 3) {
+            showAlert("Помилка", "ISBN має містити цифри, дефіси та принаймні три дефіси (наприклад, 1234-5678-9-012)", Alert.AlertType.ERROR);
+            return;
+        }
+
         // Перевірка числових полів
         try {
-            Integer.parseInt(writeYearField.getText());
-            Integer.parseInt(ISBNField.getText());
+            int year = Integer.parseInt(writeYearField.getText());
+            if (year < 0 || year > java.time.Year.now().getValue()) {
+                showAlert("Помилка", "Рік видання має бути коректним", Alert.AlertType.ERROR);
+                return;
+            }
             int quantity = Integer.parseInt(QuantityField.getText());
-
             if (quantity <= 0) {
                 showAlert("Попередження", "Кількість має бути більше 0", Alert.AlertType.WARNING);
                 return;
             }
         } catch (NumberFormatException e) {
-            showAlert("Помилка", "Рік, ISBN та кількість мають бути числами", Alert.AlertType.ERROR);
+            showAlert("Помилка", "Рік видання та кількість мають бути числами", Alert.AlertType.ERROR);
             return;
         }
 
@@ -153,7 +162,7 @@ public class AddBooksViews {
                 stmt.setInt(2, authorId);
                 stmt.setInt(3, ganreId);
                 stmt.setInt(4, Integer.parseInt(writeYearField.getText()));
-                stmt.setInt(5, Integer.parseInt(ISBNField.getText()));
+                stmt.setString(5, isbn); // Зберігаємо ISBN як текст
                 stmt.setInt(6, Integer.parseInt(QuantityField.getText()));
 
                 int affectedRows = stmt.executeUpdate();
